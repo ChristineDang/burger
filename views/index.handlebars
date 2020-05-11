@@ -1,0 +1,48 @@
+<main>
+    <div class = "jumbotron jumbotron-fluid" style = "text-align: center; background-color: rgb(182, 236, 157);"><h1>Eat The Burgers!</h1></div>
+    <div class ="container">
+        <div class ="row">
+            <div class = "col-md">
+                <ul>
+                    <h2 style = "text-align: center;">Ordered Burgers</h2>
+                    {{#each burger}}
+                        {{#unless devoured}}
+                        <ul style = "text-align: center;">
+                            <br>
+                            {{this.burger_name}}
+                            <form action = "burgers/insertOne/{{this.id}}?_method=PUT" method="POST">
+                            <input type = "hidden" name="devoured" value="true">
+                            <button class = "btn btn-primary" type = "submit">Devour!</button>
+                            </form>
+                        </ul>
+                        {{/unless}}
+                    {{/each}}    
+                </ul>
+            </div>
+            <div class = "col-md">
+                <ul>
+                    <h2 style = "text-align: center;">Devoured Burgers</h2>
+                    {{#each burger}}
+                        {{#if devoured}}
+                        <li class = "list-group-item">{{this.burger_name}}</li>
+                        {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+
+           
+        </div>
+        <div class = "row">
+            <div class = "col-md">
+                 <h2 style = "text-align: center">Order a Burger</h2>
+                <div style = "text-align: center">
+                    <label for = "burg">Burger Name: </label>
+                        <form action = "/burgers/insertOne" method="POST">
+                            <input type="text" id="burg" name="burger_name">
+                            <button class = "btn btn-primary" type="submit">Add Burger!</button>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
