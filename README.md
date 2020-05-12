@@ -6,11 +6,7 @@ ABOUT:
 APP OVERVIEW:
 * A manual ORM system was used to simplify the process of transferring information between the MySQL database into objects.
 
-<<<<<<< HEAD
 * The app consists of 6 main files (public, db, config, models, controllers, and views) that connects the MySQL database to the website. Rather than using .html documents, .handlebars are used (main.handlebars & index.handlebars).
-=======
-* The app consists of 6 main files (public, db, config, models, controllers, and views) that connects the MySQL database to a website. Rather than using .html documents, .handlebars are used (main.handlebars & index.handlebars). 
->>>>>>> 5fd89f8eefad819ba0c9532797419675c4b0627c
 
 
 HOW TO USE Friend Finder:
